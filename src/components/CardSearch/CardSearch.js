@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { onFindCardRequestNumber, onFindCardCompany } from '../../store/actions/filterCard'
 import useStyles from './CardSearch.styles'
-import searchImg from '../../assets/images/search.png';
+import searchImg from '../../assets/images/search.png'
 
 const CardSearch = () => {
   const dispatch = useDispatch()

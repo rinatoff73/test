@@ -1,9 +1,9 @@
-import types from '../constants/card';
+import types from '../constants/card'
 
 const initialState = {
   item: null,
   error: null
-};
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -22,6 +22,6 @@ export default (state = initialState, action) => {
         }
       }
     default:
-      return state;
+      return state
   }
 }
