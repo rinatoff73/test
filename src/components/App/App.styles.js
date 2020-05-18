@@ -9,6 +9,7 @@ const useStyles = createUseStyles({
     },
     body: {
       height: '100%',
+      fontFamily: '"Times New Roman", Times, serif'
     },
     '#root': {
       height: '100vh'
@@ -16,6 +17,9 @@ const useStyles = createUseStyles({
     'input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
       WebkitAppearance: 'none',
       margin: 0
+    },
+    ' input[type="number"]': {
+      '-moz-appearance': 'textfield'
     }
   },
   app: {
