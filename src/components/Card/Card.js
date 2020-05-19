@@ -1,26 +1,18 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchCard } from '../../store/actions/cards'
+import { fetchCards } from '../../store/actions/cards'
+import { cardsFilterSelector, isCardsReadySelector } from '../../store/selectors/cards'
 import useStyles from './Card.styles'
 
 const Card = () => {
   const classes = useStyles()
   const dispatch = useDispatch()
 
-  const cards = useSelector(
-    state => state.cards.item && state.cards.item
-      .filter(card =>
-        card.requestNumber
-          .includes(state.filterCards.requestNumber) &&
-        card.company.toLowerCase()
-          .includes(state.filterCards.company.toLowerCase())
-      )
-  )
-
-  const isReady = useSelector(state => state.cards.isReady)
+  const cards = useSelector(state => cardsFilterSelector(state))
+  const isReady = useSelector(state => isCardsReadySelector(state))
 
   useEffect(() => {
-    dispatch(fetchCard())
+    dispatch(fetchCards())
   }, [dispatch])
 
   return (

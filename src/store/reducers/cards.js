@@ -8,7 +8,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case types.GET_CARD_SUCCESS:
+    case types.GET_CARDS_SUCCESS:
       {
         return {
           ...state,
@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
           isReady: true
         };
       }
-    case types.GET_CARD_FAIL:
+    case types.GET_CARDS_FAIL:
       {
         return {
           ...state,

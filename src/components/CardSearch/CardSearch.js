@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { onFindCardRequestNumber, onFindCardCompany } from '../../store/actions/filterCards'
+import { onFindCardsRequestNumber, onFindCardsCompany } from '../../store/actions/filterCards'
 import useStyles from './CardSearch.styles'
 import searchImg from '../../assets/images/search.png'
 
@@ -9,11 +9,11 @@ const CardSearch = () => {
   const classes = useStyles()
 
   const findRequestNumber = e => {
-    dispatch(onFindCardRequestNumber(e.target.value))
+    dispatch(onFindCardsRequestNumber(e.target.value))
   }
 
   const findCardCompany = e => {
-    dispatch(onFindCardCompany(e.target.value))
+    dispatch(onFindCardsCompany(e.target.value))
   }
 
   return (

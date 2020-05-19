@@ -67,4 +67,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-Затрачено ~ 7 часов
+Затрачено ~ 8 часов

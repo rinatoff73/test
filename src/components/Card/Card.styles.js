@@ -41,20 +41,20 @@ const useStyles = createUseStyles({
   blockTopCheck: {
     display: 'flex',
     justifyContent: 'space-between',
-    '& $input': {
+    '& input': {
       display: 'none',
-      '& + $label': {
+      '& + label': {
         '&:after': {
           content: 'none'
         }
       },
-      '&:checked + $label': {
+      '&:checked + label': {
         '&:after': {
           content: '""'
         }
       }
     },
-    '& $label': {
+    '& label': {
       position: 'relative',
       display: 'inline-block',
       paddingLeft: '2.2rem',
