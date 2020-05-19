@@ -1,5 +1,5 @@
 import axios from 'axios'
-import types from '../constants/card'
+import types from '../constants/cards'
 
 const getCardSuccess = data => ({
   type: types.GET_CARD_SUCCESS,
@@ -15,8 +15,7 @@ export const fetchCard = () => {
   return async dispatch => {
     try {
       const res = await axios.get('http://www.mocky.io/v2/5ec246402f0000a97dc350d0')
-      const { data } = res
-      dispatch(getCardSuccess(data))
+      dispatch(getCardSuccess(res.data))
     } catch (error) {
       dispatch(getCardFail(error))
     }

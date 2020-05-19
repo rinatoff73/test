@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import card from './card'
-import filterCard from './filterCard'
+import cards from './cards'
+import filterCards from './filterCards'
 
 export const rootReducer = combineReducers({
-  card,
-  filterCard
+  cards,
+  filterCards
 })

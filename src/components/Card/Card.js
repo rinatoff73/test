@@ -1,19 +1,23 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { fetchCard } from '../../store/actions/cards'
 import useStyles from './Card.styles'
-import { fetchCard } from '../../store/actions/card'
 
 const Card = () => {
   const classes = useStyles()
   const dispatch = useDispatch()
 
-  const card = useSelector(
-    state => state.card.item && state.card.item
-      .filter(card => card.requestNumber
-        .includes(state.filterCard.requestNumber))
-      .filter(card => card.company.toLowerCase()
-        .includes(state.filterCard.company.toLowerCase()))
+  const cards = useSelector(
+    state => state.cards.item && state.cards.item
+      .filter(card =>
+        card.requestNumber
+          .includes(state.filterCards.requestNumber) &&
+        card.company.toLowerCase()
+          .includes(state.filterCards.company.toLowerCase())
+      )
   )
+
+  const isReady = useSelector(state => state.cards.isReady)
 
   useEffect(() => {
     dispatch(fetchCard())
@@ -22,14 +26,14 @@ const Card = () => {
   return (
     <div className={classes.box}>
       {
-        card ?
-          card.map((item) => (
+        isReady ?
+          cards.map((item) => (
             <div className={classes.item} key={item.id}>
               <div className={classes.blockTop}>
                 <div className={classes.blockTopCheck}>
                   <h6 className={classes.title}>{item.title}</h6>
                   <div className={classes.checkboxBox}>
-                      <input type="checkbox" id={`checkbox${item.id}`}/>
+                    <input type="checkbox" id={`checkbox${item.id}`} />
                     <label htmlFor={`checkbox${item.id}`}></label>
                   </div>
                 </div>

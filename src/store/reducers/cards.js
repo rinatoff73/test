@@ -1,8 +1,9 @@
-import types from '../constants/card'
+import types from '../constants/cards'
 
 const initialState = {
   item: null,
-  error: null
+  error: null,
+  isReady: false
 }
 
 export default (state = initialState, action) => {
@@ -12,6 +13,7 @@ export default (state = initialState, action) => {
         return {
           ...state,
           item: action.payload,
+          isReady: true
         };
       }
     case types.GET_CARD_FAIL:

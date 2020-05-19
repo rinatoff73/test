@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { onFindCardRequestNumber, onFindCardCompany } from '../../store/actions/filterCard'
+import { onFindCardRequestNumber, onFindCardCompany } from '../../store/actions/filterCards'
 import useStyles from './CardSearch.styles'
 import searchImg from '../../assets/images/search.png'
 
@@ -8,12 +8,12 @@ const CardSearch = () => {
   const dispatch = useDispatch()
   const classes = useStyles()
 
-  const findRequestNumber = num => {
-    dispatch(onFindCardRequestNumber(num))
+  const findRequestNumber = e => {
+    dispatch(onFindCardRequestNumber(e.target.value))
   }
 
-  const findCardCompany = value => {
-    dispatch(onFindCardCompany(value))
+  const findCardCompany = e => {
+    dispatch(onFindCardCompany(e.target.value))
   }
 
   return (
@@ -21,7 +21,7 @@ const CardSearch = () => {
       <div className={classes.request}>
         <input type="number"
           placeholder="Номер заявки"
-          onChange={e => findRequestNumber(e.target.value)}
+          onChange={findRequestNumber}
         />
         <img src={searchImg} alt="search" />
       </div>
@@ -29,7 +29,7 @@ const CardSearch = () => {
         <input
           type="text"
           placeholder="Наименование клиента"
-          onChange={e => findCardCompany(e.target.value)}
+          onChange={findCardCompany}
         />
         <img src={searchImg} alt="search" />
       </div>

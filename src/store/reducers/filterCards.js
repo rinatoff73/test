@@ -1,4 +1,4 @@
-import types from '../constants/filterCard'
+import types from '../constants/filterCards'
 
 const initialState = {
   requestNumber: '',

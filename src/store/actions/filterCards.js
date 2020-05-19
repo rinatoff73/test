@@ -1,4 +1,4 @@
-import types from '../constants/filterCard'
+import types from '../constants/filterCards'
 
 export const onFindCardRequestNumber = num => ({
   type: types.FIND_CARD_REQUEST_NUMBER,
